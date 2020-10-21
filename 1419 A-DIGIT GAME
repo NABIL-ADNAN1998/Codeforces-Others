@@ -14,8 +14,9 @@ int main() {
         for (i = 0; i < n; i++) {
             if (i % 2 == 0) {
                 if (a[i] % 2 == 0) {
-                    re++;                   /*this is pretty cofusionary.but look at the digit 1 0 2.here we see raze can play 1 and 2,but in string
-                                                                              1 and 2 are in the even position*/
+                    re++;                          /*this is pretty cofusionary.but look at the digit 1 0 2.here we see raze can play 1 and 2,but in string
+                                             1 and 2 are in the even position,So string's even works odd really and string's odd works as even for the problem*/
+                                                                                                                 
                 } else {
                     ro++;
                 }
