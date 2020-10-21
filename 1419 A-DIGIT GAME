@@ -1,0 +1,47 @@
+#include<bits/stdc++.h>
+#include<string>
+#include<cmath>
+using namespace std;
+
+int main() {
+    int t;
+    cin>>t;
+    while (t--) {
+        long long int i, re = 0, ro = 0, be = 0, bo = 0, n;
+        cin>>n;
+        string a;
+        cin>>a;
+        for (i = 0; i < n; i++) {
+            if (i % 2 == 0) {
+                if (a[i] % 2 == 0) {
+                    re++;                   /*this is pretty cofusionary.but look at the digit 1 0 2.here we see raze can play 1 and 2,but in string
+                                                                              1 and 2 are in the even position*/
+                } else {
+                    ro++;
+                }
+            } else {
+                if (a[i] % 2 == 0) {
+                    be++;
+                } else {
+                    bo++;
+                }
+            }
+        }
+        if (n % 2 == 0) {
+            if (be > 0) {
+                cout << 2 << endl;
+            } else {
+                cout << 1 << endl;
+            }
+        } else {
+            if (ro > 0) {
+                cout << 1 << endl;
+            } else {
+                cout << 2 << endl;
+            }
+        }
+
+    }
+    return 0;
+}
+
