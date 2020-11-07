@@ -6,19 +6,14 @@ int main() {
     cin>>t;
     while (t--) {
         int m;
-        int i, j, n;
+        int i, j, n,count=0;
         cin >>n>>m;
         double a[n];
         for (i = 0; i < n; i++) {
             cin >> a[i];
+            count+=a[i];
         }
-        double count = 0;
-        for (j = 0; j < n; j++) {
-            for (i = j; i < n; i++) {
-                count += double (a[i] / (i + 1));
-            }
-
-        }
+        
 
         cout << (count == m ? "YES" : "NO") << endl;
         count = 0;
