@@ -1,0 +1,39 @@
+import java.util.Arrays;
+import java.util.Scanner;
+ 
+public class Solution {
+ 
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int t, i, j, k;
+        t = input.nextInt();
+        while (t != 0) {
+            int n, count, big = 0;
+            n = input.nextInt();
+            int[] ar = new int[n];
+            for (j = 0; j < n; j++) {
+                ar[j] = input.nextInt();
+            }
+            Arrays.sort(ar);
+            if (ar.length <= 1) {
+                System.out.println(1);
+            } else {
+                for (i = 0; i < n - 1; i = i + count) {
+                    count = 1;
+                    for (k = i + 1; k < n; k++) {
+                        if (ar[k] == ar[i]) {
+                            count++;
+                        } else {
+                            break;
+                        }
+                    }
+                    if (count > big) {
+                        big = count;
+                    }
+                }
+                System.out.println(big);
+            }
+            t--;
+        }
+    }
+}
