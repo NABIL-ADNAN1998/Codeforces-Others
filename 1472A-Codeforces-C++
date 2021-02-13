@@ -1,0 +1,41 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int t;
+    cin >> t;
+    while (t--)
+    {
+        int w, h, n, p = 1;
+        cin>>w>>h>>n;
+        if (w % 2 == 0)
+        {
+            for (int i = 0;; i++)
+            {
+                w = w / 2;
+                p *= 2;
+                if (w % 2 != 0)
+                {
+                    break;
+                }
+            }
+        }
+        if (h % 2 == 0)
+        {
+            for (int i = 0;; i++)
+            {
+                h = h / 2;
+                p *= 2;
+                if (h % 2 != 0)
+                {
+                    break;
+                }
+            }
+        }
+        if(p>=n){
+            cout<<"yes"<<endl;
+        }else{
+            cout<<"no"<<endl;
+        }
+    }
+}
