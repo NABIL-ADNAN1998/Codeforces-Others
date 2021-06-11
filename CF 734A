@@ -1,0 +1,41 @@
+//codeforces 734 A
+#include <bits/stdc++.h>
+#include <utility>
+#include <vector>
+using ll = long long int;
+using namespace std;
+int main()
+{
+    ll test, anton(0), danik(0);
+    cin >> test;
+    string mylist;
+    cin >> mylist;
+    for (ll i = 0; i < mylist.length(); i++)
+    {
+        if (mylist[i] == 'A')
+        {
+            anton++;
+        }
+        else
+        {
+            danik++;
+        }
+    }
+    
+
+    if (anton > danik)
+    {
+        cout << "Anton" << endl;
+    }
+    else
+    {
+        if (anton == danik)
+        {
+            cout << "Friendship" << endl;
+        }
+        else
+        {
+            cout << "Danik" << endl;
+        }
+    }
+}
