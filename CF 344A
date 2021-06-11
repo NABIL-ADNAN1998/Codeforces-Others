@@ -1,0 +1,39 @@
+//solution of codeforces 344-A(Magnets)
+#include <bits/stdc++.h>
+#include <utility>
+#include <vector>
+using ll = long long int;
+using namespace std;
+int main()
+{
+    ll testcase, count = 0, pre, post, input;
+
+    cin >> testcase;
+    for (ll i = 1; i <= testcase; i++)
+    {
+
+        cin >> input;
+        if (i != 1)
+        {
+            post = input;
+            if (post == pre)
+            {
+                pre = post;
+                continue;
+            }
+            else
+            {
+                pre = post;
+                count++;
+                continue;
+            }
+        }
+        else
+        {
+            pre = input;
+            continue;
+        }
+    }
+
+    cout << count + 1 << endl;
+}
