@@ -1,0 +1,22 @@
+// codeforces 732 A
+#include <bits/stdc++.h>
+#include <utility>
+#include <vector>
+using ll = long long int;
+using namespace std;
+int main()
+{
+    ll k, r, ans;
+    cin >> k >> r;
+
+    for (ll i = 1;; i++)
+    {
+        if ((k * i) % 10 == 0 || (k * i) % 10 == r)
+        {
+            ans = i;
+            break;
+        }
+    }
+    cout << ans << endl;
+    return 0;
+}
