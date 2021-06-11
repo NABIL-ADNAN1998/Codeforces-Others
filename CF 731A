@@ -1,0 +1,42 @@
+// codeforces 731 A
+#include <bits/stdc++.h>
+#include <utility>
+#include <vector>
+using ll = long long int;
+using namespace std;
+int main()
+{
+    string s;
+    cin >> s;
+    ll distance(0), count(0), primary;
+    primary = abs(s[0] - 'a');
+    if (primary > 13)
+    {
+        ll temp = 13 - (primary - 13);
+        count += temp;
+    }
+    else
+    {
+        count += primary;
+    }
+
+    for (ll i = 0; i < s.length() - 1; i++)
+    {
+        if (abs(s[i] - s[i + 1]) <= 13)
+        {
+            distance = abs(s[i] - s[i + 1]);
+            count += distance;
+        }
+        else
+        {
+            ll temp = abs(s[i] - s[i + 1]) - 13;
+            distance = 13 - temp;
+            
+            count += distance;
+        }
+
+        distance = 0;
+    }
+
+    cout << count << endl;
+}
