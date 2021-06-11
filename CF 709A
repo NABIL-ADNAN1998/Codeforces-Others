@@ -1,0 +1,38 @@
+//codeforces 709 A
+#include <bits/stdc++.h>
+#include <utility>
+#include <vector>
+using ll = long long int;
+using namespace std;
+int main()
+{
+    ll num, b, d, temp(0);
+    cin >> num >> b >> d;
+    ll count(0);
+    ll list[num];
+    for (ll i = 0; i < num; i++)
+    {
+        cin >> list[i];
+    }
+
+    for (ll i = 0; i < num; i++)
+    {
+
+        if (list[i] > b)
+        {
+            continue;
+        }
+        else
+        {
+            temp = temp + list[i];
+            if (temp > d)
+            {
+                count++;
+                temp = 0;
+            }
+        }
+    }
+
+    cout << count << endl;
+    return 0;
+}
