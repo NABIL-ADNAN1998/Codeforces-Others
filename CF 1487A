@@ -1,0 +1,33 @@
+#include <iostream>
+#include <algorithm>
+using namespace std;
+int main()
+{
+    int t;
+    cin >> t;
+    while (t--)
+    {
+        int n, i, count = 1, j, result;
+        cin >> n;
+        int a[n];
+        for (i = 0; i < n; i++)
+        {
+            cin >> a[i];
+        }
+        int asize = sizeof(a) / sizeof(a[0]);
+        sort(a, a + asize);
+        for (j = 1; j < n; j++)
+        {
+            if (a[j] == a[0])
+            {
+                count++;
+            }
+            else
+            {
+                break;
+            }
+        }
+        result = asize - count;
+        cout << result << endl;
+    }
+}
