@@ -1,0 +1,30 @@
+//solution of "and then there were k"
+#include <bits/stdc++.h>
+#include <utility>
+#include <vector>
+using ll = long long int;
+using namespace std;
+int main()
+{
+    ll test;
+    cin >> test;
+    while (test--)
+    {
+        ll num;
+        cin >> num;
+        ll temp, temp_result;
+        for (ll i = 0;; i++)
+        {
+            temp = pow(2, i);
+            if (temp > num)
+            {
+                break;
+            }
+            else
+            {
+                temp_result = temp;
+            }
+        }
+        cout << temp_result - 1 << endl;
+    }
+}
