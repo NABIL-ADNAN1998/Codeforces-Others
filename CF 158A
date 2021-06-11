@@ -1,0 +1,36 @@
+// solution of next round
+#include <bits/stdc++.h>
+#include <utility>
+#include <vector>
+using ll = long long int;
+using namespace std;
+int main()
+{
+   ll n, k, i, count = 0;
+   cin >> n >> k;
+   ll point[n];
+
+   for (i = 0; i < n; i++)
+   {
+      cin >> point[i];
+   }
+
+
+   int pass = point[k - 1];
+
+
+   for (ll j = 0; j < n; j++)
+   {
+      if (point[j] >= pass && point[j] != 0)
+      {
+         count++;
+      }
+      else
+      {
+         continue;
+      }
+   }
+
+
+   cout << count << endl;
+}
