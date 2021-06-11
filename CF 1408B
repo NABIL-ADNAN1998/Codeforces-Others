@@ -1,0 +1,19 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+    int n;
+    cin >> n;
+    int myarray[n];
+    int i, len = sizeof(myarray) / sizeof(myarray[0]);
+    for (i = 0; i < len; i++)
+    {
+        cin >> myarray[i];
+    }
+    int sum = 0;
+    for (i = 0; i < len; i++)
+    {
+        sum += myarray[i];
+    }
+    cout << sum << endl;
+}
