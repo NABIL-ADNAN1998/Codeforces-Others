@@ -1,0 +1,29 @@
+//codeforces 315B
+#include <iostream>
+using namespace std;
+int main()
+{
+    int stringlength, coin = 0, x = 0, y = 0;
+    cin >> stringlength;
+    string move, point;
+    cin >> move;
+    for (int i = 0; i < stringlength; i++)
+    {
+        if (move[i] == 'U')
+        {
+            y++;
+            point = "U";
+        }
+        else
+        {
+            x++;
+            point = "R";
+        }
+        if (x == y && move[i + 1] == point[0])
+        {
+            coin++;
+        }
+    }
+    cout << coin << endl;
+    return 0;
+}
