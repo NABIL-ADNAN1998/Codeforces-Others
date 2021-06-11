@@ -1,0 +1,46 @@
+//solution of codeforces 451A(Game with sticks)
+#include <bits/stdc++.h>
+#include <utility>
+#include <vector>
+using ll = long long int;
+using namespace std;
+int main()
+{
+    ll n, m;
+    cin >> n >> m;
+    if (n == m)
+    {
+        if (n % 2 == 0)
+        {
+            cout << "Malvika" << endl;
+            return 0;
+        }
+        else
+        {
+            cout << "Akshat" << endl;
+            return 0;
+        }
+    }
+    else
+    {
+        ll small;
+        if (n < m)
+        {
+            small = n;
+        }
+        else
+        {
+            small = m;
+        }
+        if (small % 2 == 0)
+        {
+            cout << "Malvika" << endl;
+            return 0;
+        }
+        else
+        {
+            cout << "Akshat" << endl;
+            return 0;
+        }
+    }
+}
