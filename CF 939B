@@ -1,0 +1,34 @@
+//solution of hamster farm
+#include <iostream>
+using namespace std;
+int main()
+{
+    long long int hamster, n, mod, low, pos, i;
+    cin >> hamster >> n;
+    long long int box[n], answer[n];
+    for (i = 0; i < n; i++)
+    {
+        cin >> box[i];
+        answer[i] = hamster % box[i];
+    }
+    low = answer[0];
+    pos = 0;
+    for (i = 1; i < n; i++)
+    {
+        if (answer[i] < low)
+        {
+            low = answer[i];
+            pos = i;
+        }
+    }
+    if (hamster == 0)
+    {
+        cout << 1 << " " << 0;
+        return 0;
+    }
+    else
+    {
+        cout << pos + 1 << " " << hamster / box[pos] << endl;
+        return 0;
+    }
+}
