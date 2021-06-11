@@ -1,0 +1,44 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+int main()
+{
+    string now, target;
+    cin >> now >> target;
+    int move;
+    move = max(abs(now[0] - target[0]), abs(now[1] - target[1]));
+    cout << move << endl;
+
+    while (now != target)
+    {
+        if (now[0] < target[0])
+        {
+            cout << "R";
+            now[0] += 1;
+        }
+        else
+        {
+            if (now[0] > target[0])
+            {
+                cout << "L";
+                now[0] -= 1;
+            }
+        }
+
+        if (now[1] < target[1])
+        {
+            cout << "U";
+            now[1] += 1;
+        }
+        else
+        {
+            if (now[1] > target[1])
+            {
+                cout << "D";
+                now[1] -= 1;
+            }
+        }
+        cout << endl;
+    }
+    return 0;
+}
