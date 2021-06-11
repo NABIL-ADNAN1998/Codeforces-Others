@@ -1,0 +1,27 @@
+//solution of ordinary numbers
+#include <bits/stdc++.h>
+#include <utility>
+#include <vector>
+using ll = long long int;
+using namespace std;
+int main()
+{
+    ll test;
+    cin >> test;
+    while (test--)
+    {
+        ll n, output = 0;
+        cin >> n;
+        for (ll pw = 1; pw <= n; pw = pw * 10 + 1)
+        {
+            for (int d = 1; d <= 9; d++)
+            {
+                if ((pw * d) <= n)
+                {
+                    output++;
+                }
+            }
+        }
+        cout << output << endl;
+    }
+}
