@@ -1,0 +1,24 @@
+//codechef contest-Lazy chef
+#include <bits/stdc++.h>
+#include <utility>
+#include <vector>
+using ll = long long int;
+using namespace std;
+int main()
+{
+    ll testcase;
+    cin >> testcase;
+    while (testcase--)
+    {
+        ll x, m, d;
+        cin >> x >> m >> d;
+        if (m * x < x + d)
+        {
+            cout << m * x << endl;
+        }
+        else
+        {
+            cout << x + d << endl;
+        }
+    }
+}
