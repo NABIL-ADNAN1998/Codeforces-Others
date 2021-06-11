@@ -1,0 +1,21 @@
+//solution of gravity flip
+#include <bits/stdc++.h>
+using namespace std;
+typedef long long int ll;
+int main()
+{
+    ll row, len;
+    cin >> row;
+    ll cube[row];
+    for (ll i = 0; i < row; i++)
+    {
+        cin >> cube[i];
+    }
+    
+    len = sizeof(cube) / sizeof(cube[0]);
+    sort(cube, cube + len);
+    for (ll i = 0; i < len; i++)
+    {
+        cout << cube[i] << " ";
+    }
+}
