@@ -1,0 +1,28 @@
+//UVa 10110 solution
+#include <bits/stdc++.h>
+#include <utility>
+#include <vector>
+using ll = long long int;
+using namespace std;
+int main()
+{
+    while (1)
+    {
+        ll num;
+        cin >> num;
+        if (num == 0)
+        {
+            break;
+        }
+        
+        ll x = sqrt(num);
+        if (x * x == num)
+        {
+            cout << "yes" << endl;
+        }
+        else
+        {
+            cout << "no" << endl;
+        }
+    }
+}
