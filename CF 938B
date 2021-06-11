@@ -1,0 +1,32 @@
+//solution of "Run for your prize"
+#include <iostream>
+#include <vector>
+using namespace std;
+int main()
+{
+    long long int numofprize, x, y;
+    cin >> numofprize;
+    int position[numofprize];
+    for (int i = 0; i < numofprize; i++)
+    {
+        cin >> position[i];
+    }
+    vector<long long int> time;
+    for (int i = 0; i < numofprize; i++)
+    {
+        x = position[i] - 1;
+        y = 1000000 - position[i];
+        long long int minimum = min(x, y);
+        time.push_back(minimum);
+    }
+    long long int max = time[0];
+    for (int i = 1; i < time.size(); i++)
+    {
+        if (time[i] > max)
+        {
+            max = time[i];
+        }
+    }
+    cout << max << endl;
+    return 0;
+}
