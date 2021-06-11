@@ -1,0 +1,26 @@
+//cake is a lie solution
+#include <iostream>
+using ll = long long int;
+using namespace std;
+int main()
+{
+    ll test;
+    cin >> test;
+    while (test--)
+    {
+        ll n, m, k;
+        cin >> n >> m >> k;
+        ll x = 1, y = 1, burley = 0;
+        burley += (n - x) * y;
+        x = n;
+        burley += (m - y) * x;
+        if (burley == k)
+        {
+            cout << "yes" << endl;
+        }
+        else
+        {
+            cout << "no" << endl;
+        }
+    }
+}
