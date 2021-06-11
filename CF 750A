@@ -1,0 +1,17 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+    long int numberOfProblem, minutes;
+    cin >> numberOfProblem >> minutes;
+    long int restMinutes = 240 - minutes, sum = 0, i;
+    for (i = 1; i <= numberOfProblem; i++)
+    {
+        sum = sum + (5 * i);
+        if (sum > restMinutes)
+        {
+            break;
+        }
+    }
+    cout << i - 1 << endl;
+}
