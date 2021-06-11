@@ -1,0 +1,26 @@
+//codeforces 263 A
+#include <bits/stdc++.h>
+#include <utility>
+#include <vector>
+using ll = long long int;
+using namespace std;
+int main()
+{
+    ll khelahobe1, khelahobe2;
+    for (ll i = 1; i <= 5; i++)
+    {
+        for (ll j = 1; j <= 5; j++)
+        {
+            ll num;
+            cin >> num;
+            if (num == 1)
+            {
+                khelahobe1 = i;
+                khelahobe2 = j;
+            }
+        }
+    }
+    ll ans = abs(khelahobe1 - 3) + abs(khelahobe2 - 3);
+    cout << ans << endl;
+    return 0;
+}
