@@ -1,0 +1,29 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+int main()
+{
+    long long int n, minimumvalue = 90000000000, distance = 9000000000000, i;
+    cin >> n;
+    long long int myarray[n];
+    vector<long long int> mysecondarray;
+    for (i = 0; i < n; i++)
+    {
+        cin >> myarray[i];
+        minimumvalue = min(myarray[i], minimumvalue);
+    }
+    for (i = 0; i < n; i++)
+    {
+        if (myarray[i] == minimumvalue)
+        {
+            mysecondarray.push_back(i);
+        }
+    }
+    for (i = 0; i < mysecondarray.size() - 1; i++)
+    {
+        distance = min((mysecondarray[i + 1] - mysecondarray[i]), distance);
+    }
+
+    cout << distance << endl;
+    return 0;
+}
