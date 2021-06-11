@@ -1,0 +1,41 @@
+//love triangle solution
+#include <iostream>
+using namespace std;
+int main()
+{
+    int n, a, b, c, va, vb, vc, match;
+    int result = 0;
+    cin >> n;
+    int plane[n + 1];
+    for (int i = 0; i < n; i++)
+    {
+        cin >> plane[i];
+    }
+    for (int i = 0; i < n; i++)
+    {
+        a = i;
+        va = plane[a];
+        b = va;
+        vb = plane[b - 1];
+        c = vb;
+        vc = plane[c - 1];
+        match = plane[vc - 1];
+        if (c != a && match == va)
+        {
+            result = 1;
+            break;
+        }
+        else
+        {
+            continue;
+        }
+    }
+    if (result > 0)
+    {
+        cout << "YES" << endl;
+    }
+    else
+    {
+        cout << "NO" << endl;
+    }
+}
