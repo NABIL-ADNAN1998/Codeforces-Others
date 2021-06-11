@@ -1,0 +1,43 @@
+//codeofrces 228 A
+#include <bits/stdc++.h>
+#include <utility>
+#include <vector>
+using ll = long long int;
+using namespace std;
+int main()
+{
+    ll list[4], count(0);
+    for (ll i = 0; i < 4; i++)
+    {
+        cin >> list[i];
+    }
+
+    ll index, change(0);
+
+    for (ll i = 0; i < 3; i++)
+    {
+        if (list[i] != 0)
+        {
+            index = list[i];
+
+            for (ll j = i + 1; j < 4; j++)
+            {
+                if (list[j] == index)
+                {
+                    list[j] = 0;
+                }
+            }
+        }
+    }
+
+    for (ll i = 0; i < 4; i++)
+    {
+        if (list[i] == 0)
+        {
+            change++;
+        }
+    }
+
+    cout << change << endl;
+    return 0;
+}
