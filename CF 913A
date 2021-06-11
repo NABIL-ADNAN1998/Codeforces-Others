@@ -1,0 +1,12 @@
+#include <bits/stdc++.h>
+#include <cmath>
+using namespace std;
+int main()
+{
+    long long int n, m, result;
+    cin >> n >> m;
+    long long int x = pow(2, n);
+    result = m % x;
+    cout << result << endl;
+    return 0;
+}
