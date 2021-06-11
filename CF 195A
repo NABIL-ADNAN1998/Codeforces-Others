@@ -1,0 +1,23 @@
+#include <iostream>
+#include <array>
+using namespace std;
+int main()
+{
+    int a, b, c, i;
+    cin >> a >> b >> c;
+    int aray[1000];
+    for (i = 0; i <= c * a; i++)
+    {
+        aray[i] = b * (i + 1);
+    }
+    int result;
+    for (i = 0; i <= 1000; i++)
+    {
+        if (aray[i] - a + (b * 2) >= a)
+        {
+            result = i + 1;
+            break;
+        }
+    }
+    cout << result << endl;
+}
