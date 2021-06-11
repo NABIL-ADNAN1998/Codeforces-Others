@@ -1,0 +1,45 @@
+//solution of cloning toys
+#include <iostream>
+using namespace std;
+typedef long long int ll;
+int main()
+{
+    ll x, y;
+    cin >> x >> y;
+    ll g, c;
+    g = y;
+    c = g - 1;
+    if (g == 0)
+    {
+        cout << "No";
+        return 0;
+    }
+    if (g == y && c == x)
+    {
+        cout << "Yes";
+        return 0;
+    }
+    if (g == y && c == 0)
+    {
+        cout << "No";
+        return 0;
+    }
+    if (g == y && c > x)
+    {
+        cout << "No";
+        return 0;
+    }
+    if (g == y && x > c)
+    {
+        if ((c % 2 == 0 && x % 2 == 0) || (c % 2 != 0 && x % 2 != 0))
+        {
+            cout << "Yes";
+            return 0;
+        }
+        else
+        {
+            cout << "No";
+            return 0;
+        }
+    }
+}
