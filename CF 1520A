@@ -1,0 +1,58 @@
+//soln of do not be distracted
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int main()
+{
+    int testcase;
+    cin >> testcase;
+    while (testcase--)
+    {
+        int n, count = 0;
+        cin >> n;
+        vector<char> v;
+        string s;
+        cin >> s;
+        v.push_back(s[0]);
+        for (int i = 1; i < s.size(); i++)
+        {
+            if (s[i] != s[i - 1])
+            {
+                v.push_back(s[i]);
+            }
+        }
+
+        for (int i = 0; i < v.size(); i++)
+        {
+            for (int j = i + 1; j < v.size(); j++)
+            {
+                if (v[i] == v[j])
+                {
+                    count++;
+
+                    break;
+                }
+                else
+                {
+                    continue;
+                }
+            }
+        }
+
+        if (count > 0)
+        {
+            cout << "no" << endl;
+        }
+        else
+        {
+            cout << "yes" << endl;
+        }
+    }
+
+    /*Such as I get BBDDCCCBBAAEE.Now I put in my vector B,D,C,B,A,E .How? when I get
+
+    s[i]!=s[i-1] then I put it on my vector.So I get B 2 times .Now I check my vector if there is any repeat
+
+    I increase "count" and I take my discission */
+}
