@@ -1,0 +1,52 @@
+//solution of 1519A(red and blue beans)
+#include <bits/stdc++.h>
+#include <utility>
+#include <vector>
+using ll = long long int;
+using namespace std;
+int main()
+{
+    ll testcase;
+    cin >> testcase;
+    while (testcase--)
+    {
+        ll red, blue, d;
+        cin >> red >> blue >> d;
+        if (red == blue)
+        {
+            if ((red * (d + 1)) >= blue)
+            {
+                cout << "yes" << endl;
+            }
+            else
+            {
+                cout << "no" << endl;
+            }
+        }
+        else
+        {
+            if (red < blue)
+            {
+                if ((red * (d + 1)) >= blue)
+                {
+                    cout << "yes" << endl;
+                }
+                else
+                {
+                    cout << "no" << endl;
+                }
+            }
+            else
+            {
+                if ((blue * (d + 1)) >= red)
+                {
+                    cout << "yes" << endl;
+                }
+                else
+                {
+                    cout << "no" << endl;
+                }
+            }
+        }
+    }
+}
