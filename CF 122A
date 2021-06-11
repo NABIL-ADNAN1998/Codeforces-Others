@@ -1,0 +1,26 @@
+//solution of lucky division
+#include <bits/stdc++.h>
+#include <utility>
+#include <vector>
+using ll = long long int;
+using namespace std;
+int main()
+{
+    ll n, i;
+    cin >> n;
+    int a[] = {4, 7, 44, 47, 74, 77, 444, 447, 474, 477, 747, 744, 774, 777};
+    for (i = 0; i < 14; i++)
+    {
+        if (n % a[i] == 0)
+        {
+            cout << "YES" << endl;
+            return 0;
+        }
+        else
+        {
+            continue;
+        }
+    }
+    cout << "NO" << endl;
+    return 0;
+}
