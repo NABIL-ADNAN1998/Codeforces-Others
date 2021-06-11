@@ -1,0 +1,21 @@
+//codeforces 799 A
+#include <bits/stdc++.h>
+#include <utility>
+#include <vector>
+using ll = long long int;
+using namespace std;
+int main()
+{
+    ll n, t, k, d;
+    cin >> n >> t >> k >> d;
+    if (d < t)
+    {
+        cout << "yes" << endl;
+    }
+    else
+    {
+        cout << "no" << endl;
+    }
+
+    return 0;
+}
