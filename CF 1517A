@@ -1,0 +1,30 @@
+//solution of "sum of 2050"
+#include <iostream>
+typedef long long int ll;
+using namespace std;
+int main()
+{
+    int test;
+    cin >> test;
+    while (test--)
+    {
+        ll num, d, sum = 0, m;
+        cin >> num;
+        if (num % 2050 != 0)
+        {
+            cout << "-1" << endl;
+        }
+        else
+        {
+            d = num / 2050;
+            while (d != 0)
+            {
+
+                m = d % 10;
+                sum += m;
+                d = d / 10;
+            }
+            cout << sum << endl;
+        }
+    }
+}
