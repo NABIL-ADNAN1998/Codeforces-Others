@@ -1,0 +1,25 @@
+//solution of expression
+#include <iostream>
+#include <vector>
+using namespace std;
+int main()
+{
+    long long int a, b, c;
+    cin >> a >> b >> c;
+    vector<long long int> result;
+    result.push_back(a * b * c);
+    result.push_back((a + b) * c);
+    result.push_back(a + (b * c));
+    result.push_back(a + b * c);
+    result.push_back(a + b + c);
+    result.push_back(a * (b + c));
+    int max = result[0];
+    for (int i = 1; i < result.size(); i++)
+    {
+        if (result[i] > max)
+        {
+            max = result[i];
+        }
+    }
+    cout << max << endl;
+}
