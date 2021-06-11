@@ -1,0 +1,22 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+    int i, n, k;
+    cin >> n >> k;
+    int bucket[n];
+    for (i = 0; i < n; i++)
+    {
+        cin >> bucket[i];
+    }
+    int minhour = 100, temporary;
+    for (i = 0; i < n; i++)
+    {
+        temporary = k % bucket[i];
+        if (temporary == 0)
+        {
+            minhour = min((k / bucket[i]), minhour);
+        }
+    }
+    cout << minhour << endl;
+}
