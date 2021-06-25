@@ -1,0 +1,49 @@
+#include <bits/stdc++.h>
+#include <utility>
+#include <vector>
+using ll = long long int;
+using namespace std;
+int main()
+{
+    string number;
+    cin >> number;
+    ll n = ((number.length() / 2) + 1), count = 0;
+    ll myarray[n];
+    for (ll i = 0; i < number.length(); i += 2)
+    {
+        if (number[i] == '1')
+        {
+            myarray[count] = 1;
+            count++;
+        }
+        else
+        {
+            if (number[i] == '2')
+            {
+                myarray[count] = 2;
+                count++;
+            }
+            else
+            {
+                myarray[count] = 3;
+                count++;
+            }
+        }
+    }
+
+    sort(myarray, myarray + n);
+
+    for (ll i = 0; i < n; i++)
+    {
+        if (i == n - 1)
+        {
+            cout << myarray[i];
+        }
+        else
+        {
+            cout << myarray[i] << "+";
+        }
+    }
+
+    return 0;
+}
