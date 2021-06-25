@@ -1,0 +1,40 @@
+#include <bits/stdc++.h>
+#include <utility>
+#include <vector>
+using ll = long long int;
+using namespace std;
+int main()
+{
+    ll n, x, nit_reserve, boys = 0;
+    cin >> n >> x;
+    nit_reserve = x;
+    while (n--)
+    {
+        char s;
+        ll amount;
+        cin >> s;
+        cin >> amount;
+        if (s == '+')
+        {
+            nit_reserve += amount;
+            amount = 0;
+        }
+        else
+        {
+            ll temp;
+            temp = nit_reserve - amount;
+            if (temp >= 0)
+            {
+                nit_reserve -= amount;
+            }
+            else
+            {
+                boys++;
+                continue;
+            }
+        }
+    }
+
+    cout << nit_reserve << " " << boys << endl;
+    return 0;
+}
