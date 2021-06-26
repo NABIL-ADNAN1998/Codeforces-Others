@@ -1,0 +1,67 @@
+#include <bits/stdc++.h>
+#include <utility>
+#include <vector>
+using ll = long long int;
+using namespace std;
+int main()
+{
+    ll total, num1 = 0, num2 = 0, num3 = 0, team;
+    cin >> total;
+    ll list[total];
+    vector<int> n1;
+    vector<int> n2;
+    vector<int> n3;
+    for (ll i = 0; i < total; i++)
+    {
+        cin >> list[i];
+        if (list[i] == 1)
+        {
+            num1++;
+            n1.push_back(i);
+        }
+        else
+        {
+            if (list[i] == 2)
+            {
+                num2++;
+                n2.push_back(i);
+            }
+            else
+            {
+                num3++;
+                n3.push_back(i);
+            }
+        }
+    }
+    if (num1 <= num2)
+    {
+        if (num1 <= num3)
+        {
+            team = num1;
+        }
+        else
+        {
+            team = num3;
+        }
+    }
+    else
+    {
+        if (num2 <= num3)
+        {
+            team = num2;
+        }
+        else
+        {
+            team = num3;
+        }
+    }
+
+    cout << team << endl;
+
+    for (ll i = 0; i < team; i++)
+    {
+        cout << n1[i] + 1 << " " << n2[i] + 1 << " " << n3[i] + 1 << endl;
+    }
+
+    return 0;
+}
