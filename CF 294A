@@ -1,0 +1,49 @@
+#include <bits/stdc++.h>
+#include <utility>
+#include <vector>
+using ll = long long int;
+using namespace std;
+int main()
+{
+    ll wire, shots, temp;
+    cin >> wire;
+    vector<int> bird;
+    for (ll i = 0; i < wire; i++)
+    {
+
+        cin >> temp;
+        bird.push_back(temp);
+        temp = 0;
+    }
+    cin >> shots;
+    while (shots--)
+    {
+        ll x, y;
+        cin >> x >> y;
+        x = x - 1;
+
+        ll left = x - 1;
+        ll right = x + 1;
+
+        if (left >= 0)
+
+        {
+            bird[left] += (y - 1);
+        }
+
+        if (right >= 0 || right <= (wire - 1))
+        {
+            bird[right] += (bird[x] - y);
+            bird[x] = 0;
+        }
+        else
+        {
+            bird[x] = 0;
+        }
+    }
+
+    for (ll i = 0; i < wire; i++)
+    {
+        cout << bird[i] << endl;
+    }
+}
