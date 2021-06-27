@@ -1,0 +1,69 @@
+#include <bits/stdc++.h>
+#include <utility>
+#include <vector>
+using ll = long long int;
+using namespace std;
+int main()
+{
+    ll n;
+    cin >> n;
+    ll list[n];
+    vector<int> output;
+    for (ll i = 0; i < n; i++)
+    {
+        cin >> list[i];
+    }
+ 
+    for (ll i = 0; i < n; i++)
+    {
+        ll index = list[i];
+        ll count = 1;
+        if (i != n - 1)
+        {
+            for (ll j = i + 1; j < n; j++)
+            {
+                if (list[j] <= index)
+                {
+                    count++;
+                    index = list[j];
+                }
+                else
+                {
+                    break;
+                }
+            }
+        }
+ 
+        index = list[i];
+ 
+        if (i != 0)
+        {
+            for (ll k = i - 1; k >= 0; k--)
+            {
+                if (list[k] <= index)
+                {
+                    count++;
+                    index = list[k];
+                }
+                else
+                {
+                    break;
+                }
+            }
+        }
+ 
+        output.push_back(count);
+    }
+ 
+    ll highest = output[0];
+    for (ll i = 1; i < output.size(); i++)
+    {
+        if (output[i] > highest)
+        {
+            highest = output[i];
+        }
+    }
+ 
+    cout << highest << endl;
+    return 0;
+}
