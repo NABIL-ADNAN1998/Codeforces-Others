@@ -1,0 +1,48 @@
+#include <bits/stdc++.h>
+#include <utility>
+#include <vector>
+using ll = long long int;
+using namespace std;
+int main()
+{
+    ll n, p, criminal = 0;
+    cin >> n >> p;
+    p = p - 1;
+    ll list[n];
+    for (ll i = 0; i < n; i++)
+    {
+        cin >> list[i];
+    }
+
+    if (list[p] == 1)
+    {
+        criminal = 1;
+    }
+
+    for (ll i = 1; i < n; i++)
+    {
+        ll right = 0, left = 0;
+        right = p + i;
+        left = p - i;
+        if (right < n && left >= 0 && list[left] == 1 && list[right] == 1)
+        {
+            criminal += 2;
+        }
+        else
+        {
+            if (right >= n && left >= 0 && list[left] == 1)
+            {
+                criminal += 1;
+            }
+            else
+            {
+                if (right < n && left < 0 && list[right] == 1)
+                {
+                    criminal += 1;
+                }
+            }
+        }
+    }
+
+    cout << criminal << endl;
+}
