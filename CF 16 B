@@ -1,0 +1,49 @@
+#include <bits/stdc++.h>
+#include <utility>
+#include <vector>
+using ll = long long int;
+using namespace std;
+int main()
+{
+    ll capacity, container, ans = 0;
+    cin >> capacity >> container;
+    pair<int, int> p[container];
+    for (ll i = 0; i < container; i++)
+    {
+        ll x, y;
+        cin >> x >> y;
+        p[i].first = y;
+        p[i].second = x;
+    }
+
+    sort(p, p + container);
+
+    
+
+    for (ll j = container - 1; j >= 0; j--)
+    {
+        if (capacity == 0)
+        {
+            break;
+        }
+        else
+        {
+            if (p[j].second >= capacity)
+            {
+                ans += capacity * p[j].first;
+                break;
+            }
+            else
+            {
+                if (p[j].second < capacity)
+                {
+                    ans += p[j].second * p[j].first;
+                    capacity -= p[j].second;
+                }
+            }
+        }
+    }
+
+    cout << ans << endl;
+    return 0;
+}
