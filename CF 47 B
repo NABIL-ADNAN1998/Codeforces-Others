@@ -1,0 +1,158 @@
+#include <bits/stdc++.h>
+#include <utility>
+#include <vector>
+using ll = long long int;
+using namespace std;
+int main()
+{
+    string sa, sb, sc;
+    ll a = 0, b = 0, c = 0;
+    cin >> sa >> sb >> sc;
+
+    if (sa[1] == '<')
+    {
+        if (sa[2] == 'A')
+        {
+            a++;
+        }
+        else
+        {
+            if (sa[2] == 'B')
+            {
+                b++;
+            }
+            else
+            {
+                c++;
+            }
+        }
+    }
+    else
+    {
+        if (sa[0] == 'A')
+        {
+            a++;
+        }
+        else
+        {
+            if (sa[0] == 'B')
+            {
+                b++;
+            }
+            else
+            {
+                c++;
+            }
+        }
+    }
+
+    if (sb[1] == '<')
+    {
+        if (sb[2] == 'A')
+        {
+            a++;
+        }
+        else
+        {
+            if (sb[2] == 'B')
+            {
+                b++;
+            }
+            else
+            {
+                c++;
+            }
+        }
+    }
+    else
+    {
+        if (sb[0] == 'A')
+        {
+            a++;
+        }
+        else
+        {
+            if (sb[0] == 'B')
+            {
+                b++;
+            }
+            else
+            {
+                c++;
+            }
+        }
+    }
+
+    if (sc[1] == '<')
+    {
+        if (sc[2] == 'A')
+        {
+            a++;
+        }
+        else
+        {
+            if (sc[2] == 'B')
+            {
+                b++;
+            }
+            else
+            {
+                c++;
+            }
+        }
+    }
+    else
+    {
+        if (sc[0] == 'A')
+        {
+            a++;
+        }
+        else
+        {
+            if (sc[0] == 'B')
+            {
+                b++;
+            }
+            else
+            {
+                c++;
+            }
+        }
+    }
+
+    if (a > b && b > c)
+    {
+        cout << "CBA";
+        return 0;
+    }
+    if (a > c && c > b)
+    {
+        cout << "BCA";
+        return 0;
+    }
+    if (b > a && a > c)
+    {
+        cout << "CAB";
+        return 0;
+    }
+    if (b > c && c > a)
+    {
+        cout << "ACB";
+        return 0;
+    }
+    if (c > a && a > b)
+    {
+        cout << "BAC";
+        return 0;
+    }
+    if (c > b && b > a)
+    {
+        cout << "ABC";
+        return 0;
+    }
+    else
+    {
+        cout << "Impossible" << endl;
+        return 0;
+    }
+}
