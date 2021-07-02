@@ -1,0 +1,32 @@
+#include <bits/stdc++.h>
+#include <utility>
+#include <vector>
+using ll = long long int;
+using namespace std;
+int main()
+{
+    ll len;
+    cin >> len;
+
+    ll list[len + 1];
+    for (ll i = 1; i <= len; i++)
+    {
+        cin >> list[i];
+    }
+
+    for (ll i = 1; i < len + 1; i++)
+    {
+        ll index = i;
+        for (ll j = 1; j < len + 1; j++)
+        {
+            if (list[j] == index)
+            {
+                cout << j << " ";
+                break;
+            }
+        }
+       
+    }
+
+    return 0;
+}
