@@ -1,0 +1,17 @@
+#include <bits/stdc++.h>
+#include <utility>
+#include <vector>
+using ll = long long int;
+using namespace std;
+int main()
+{
+    ll n;
+    cin >> n;
+    string color1 = "ROY", color2 = "GBIV";
+    cout << color1;
+    for (ll i = 3; i < n; i++)
+    {
+        cout << color2[i % 4];
+    }
+    return 0;
+}
