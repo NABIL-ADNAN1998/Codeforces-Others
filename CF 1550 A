@@ -1,0 +1,28 @@
+#include <bits/stdc++.h>
+#include <vector>
+using ll = long long int;
+using namespace std;
+int main()
+{
+    ll t;
+    cin >> t;
+    while (t--)
+    {
+        ll n, ans = 0, sum = 0;
+        cin >> n;
+        for (ll i = 1; sum + i <= n; i += 2)
+        {
+            ans++;
+            sum += i;
+        }
+
+        if (sum == n)
+        {
+            cout << ans << endl;
+        }
+        else
+        {
+            cout << ans + 1 << endl;
+        }
+    }
+}
