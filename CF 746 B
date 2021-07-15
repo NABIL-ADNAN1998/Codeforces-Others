@@ -1,0 +1,65 @@
+#include <bits/stdc++.h>
+#include <vector>
+using ll = long long int;
+using namespace std;
+int main()
+{
+    ll num;
+    cin >> num;
+    char s[num];
+    for (ll i = 0; i < num; i++)
+    {
+        cin >> s[i];
+    }
+    
+    char n[num];
+
+    if (num % 2 != 0)
+    {
+
+        ll mid = num / 2;
+        ll left = mid - 1;
+        ll right = mid + 1;
+        n[mid] = s[0];
+
+        for (ll i = 1; i < num; i++)
+        {
+            if (i % 2 != 0)
+            {
+                n[left] = s[i];
+
+                left -= 1;
+            }
+            else
+            {
+                n[right] = s[i];
+                right += 1;
+            }
+        }
+    }
+    else
+    {
+        ll mid = (num / 2) - 1;
+        ll left = mid - 1;
+        ll right = mid + 1;
+        n[mid] = s[0];
+        for (ll i = 1; i < num; i++)
+        {
+            if (i % 2 != 0)
+            {
+                n[right] = s[i];
+                right += 1;
+            }
+            else
+            {
+                n[left] = s[i];
+                left -= 1;
+            }
+        }
+    }
+
+    for (ll i = 0; i < num; i++)
+    {
+        cout << n[i];
+    }
+}
