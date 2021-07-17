@@ -1,0 +1,48 @@
+#include <bits/stdc++.h>
+using ll = long long int;
+using namespace std;
+int main()
+{
+    ll n, m;
+    char c;
+    cin >> n >> m >> c;
+    char a[n][m];
+    set<char> s;
+
+    for (ll i = 0; i < n; i++)
+    {
+        for (ll j = 0; j < m; j++)
+        {
+            cin >> a[i][j];
+        }
+    }
+    for (ll i = 0; i < n; i++)
+    {
+        for (ll j = 0; j < m; j++)
+        {
+            if (a[i][j] == c)
+            {
+                if (a[i + 1][j] != '.' && a[i + 1][j] != c && i + 1 < n)
+                {
+                    s.insert(a[i + 1][j]);
+                }
+                if (a[i - 1][j] != '.' && a[i - 1][j] != c && i - 1 < n && i - 1 >= 0)
+                {
+                    s.insert(a[i - 1][j]);
+                }
+
+                if (a[i][j + 1] != '.' && a[i][j + 1] != c && j + 1 < m)
+                {
+                    s.insert(a[i][j + 1]);
+                }
+                if (a[i][j - 1] != '.' && a[i][j - 1] != c && j - 1 < m && j - 1 >= 0)
+                {
+                    s.insert(a[i][j - 1]);
+                }
+            }
+        }
+    }
+
+    cout << s.size() << endl;
+    return 0;
+}
