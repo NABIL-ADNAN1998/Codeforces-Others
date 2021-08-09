@@ -1,0 +1,44 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int t;
+    cin >> t;
+    while (t--)
+    {
+        int n;
+        cin >> n;
+        int a[n];
+        int i;
+        for (i = 0; i < n; i++)
+        {
+            cin >> a[i];
+        }
+        int brilliant = 0, dumb = 0;
+        for (i = 0; i < n; i++)
+        {
+            if (i % 2 == 0)
+            {
+                if (a[i] % 2 != 0)
+                {
+                    brilliant++;
+                }
+            }
+            else
+            {
+                if (a[i] % 2 == 0)
+                {
+                    dumb++;
+                }
+            }
+        }
+        if (brilliant == dumb)
+        {
+            cout << brilliant << endl;
+        }
+        else
+        {
+            cout << "-1" << endl;
+        }
+    }
+}
