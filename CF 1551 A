@@ -1,0 +1,35 @@
+#include <bits/stdc++.h>
+#include <algorithm>
+using ll = long long int;
+using namespace std;
+int main()
+{
+    ll t;
+    cin >> t;
+    while (t--)
+    {
+        ll c1, c2, n, ans, rest;
+        cin >> n;
+        ans = n / 3;
+        c1 = ans;
+        c2 = ans;
+        rest = n - (ans * 3);
+        if (rest == 1)
+        {
+            c1++;
+        }
+        else
+        {
+            if (rest == 0)
+            {
+                c1 += 0;
+            }
+            else
+            {
+                c2++;
+            }
+        }
+        cout << c1 << " " << c2 << endl;
+        ans = 0, rest = 0, c1 = 0, c2 = 0;
+    }
+}
