@@ -1,0 +1,36 @@
+#include <bits/stdc++.h>
+#include <algorithm>
+#include <stdlib.h>
+using ll = long long int;
+using namespace std;
+int main()
+{
+    ll p, pp, d, dp;
+    cin >> p >> pp >> d >> dp;
+    if (p >= d)
+    {
+        cout << p << endl;
+        return 0;
+    }
+    while (1)
+    {
+        if (p + pp < d)
+        {
+            p += pp;
+            if (d - dp > p)
+            {
+                d -= dp;
+            }
+            else
+            {
+                cout << p << endl;
+                return 0;
+            }
+        }
+        else
+        {
+            cout << d << endl;
+            return 0;
+        }
+    }
+}
