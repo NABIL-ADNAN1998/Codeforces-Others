@@ -1,0 +1,82 @@
+#include <bits/stdc++.h>
+#include <algorithm>
+#include <stdlib.h>
+using ll = long long int;
+using namespace std;
+
+vector<int> v;
+int mycheck(int n)
+{
+    ll count = 0;
+    for (ll i = 0; i < v.size(); i++)
+    {
+        if (v[i] < n)
+        {
+            count++;
+        }
+        else
+        {
+            if (v[i] == n)
+            {
+                count = -1;
+                return count;
+            }
+            else
+            {
+                if (v[i] > n)
+                {
+                    break;
+                }
+            }
+        }
+    }
+    return count;
+}
+
+int main()
+{
+    ll p = 1, n, m, k, t, a, b, x, y;
+    cin >> n >> m >> k >> t;
+    ll s[n + 1][m + 1];
+
+    for (ll i = 0; i < k; i++)
+    {
+        cin >> a >> b;
+        v.push_back((a - 1) * m + b);
+    }
+
+    sort(v.begin(), v.end());
+
+    for (ll i = 0; i < t; i++)
+    {
+        cin >> a >> b;
+        x = mycheck((a - 1) * m + b);
+        if (x == -1)
+        {
+            cout << "Waste" << endl;
+            continue;
+        }
+        else
+        {
+            y = ((a - 1) * m + b) - x;
+            if (y % 3 == 1)
+            {
+                cout << "Carrots" << endl;
+                continue;
+            }
+            else
+            {
+                if (y % 3 == 2)
+                {
+                    cout << "Kiwis" << endl;
+                    continue;
+                }
+                else
+                {
+                    cout << "Grapes" << endl;
+                    continue;
+                }
+            }
+        }
+    }
+}
