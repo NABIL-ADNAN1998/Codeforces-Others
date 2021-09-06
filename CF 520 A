@@ -1,0 +1,45 @@
+#include <bits/stdc++.h>
+using ll = long long int;
+using namespace std;
+
+int main()
+{
+    ll n, count = 0;
+    cin >> n;
+    string s;
+    cin >> s;
+    string cap = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    string small = "abcdefghijklmnopqrstuvwxyz";
+
+    for (ll i = 0; i < s.size(); i++)
+    {
+        char temp = s[i];
+        for (ll j = 0; j < cap.size(); j++)
+        {
+            if (cap[j] == temp || small[j] == temp)
+            {
+                if (cap[j] != '1' || small[j] != '1')
+                {
+                    cap[j] = '1';
+                    small[j] = '1';
+                    count++;
+                }
+                else
+                {
+                    continue;
+                }
+            }
+        }
+    }
+
+    if (count == 26)
+    {
+        cout << "YES" << endl;
+        return 0;
+    }
+    else
+    {
+        cout << "NO" << endl;
+        return 0;
+    }
+}
