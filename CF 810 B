@@ -1,0 +1,29 @@
+#include <bits/stdc++.h>
+using ll = long long int;
+using namespace std;
+ 
+int main()
+{
+    ll n, f, p, c, ans = 0;
+ 
+    cin >> n >> f;
+ 
+    vector<ll> v;
+ 
+    for (ll i = 0; i < n; i++)
+    {
+        cin >> p >> c;
+        ans += min(p, c);
+        v.push_back(min(p * 2, c) - min(p, c));
+    }
+ 
+    sort(v.rbegin(), v.rend());
+ 
+    for (ll i = 0; i < f; i++)
+    {
+        ans += v[i];
+    }
+ 
+    cout << ans << endl;
+    return 0;
+}
