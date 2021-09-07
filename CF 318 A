@@ -1,0 +1,55 @@
+#include <bits/stdc++.h>
+using ll = long long int;
+using namespace std;
+
+int main()
+{
+    ll n, k, mid, odd = 1, even = 0;
+    cin >> n >> k;
+    if (n % 2 != 0)
+    {
+        mid = (n / 2) + 1;
+        if (k > mid)
+        {
+            k = k - mid;
+            for (ll i = 0; i < k; i++)
+            {
+                even += 2;
+            }
+            cout << even << endl;
+            return 0;
+        }
+        else
+        {
+            for (ll i = 0; i < k - 1; i++)
+            {
+                odd += 2;
+            }
+            cout << odd << endl;
+            return 0;
+        }
+    }
+    else
+    {
+        mid = n / 2;
+        if (k > mid)
+        {
+            k = k - mid;
+            for (ll i = 0; i < k; i++)
+            {
+                even += 2;
+            }
+            cout << even << endl;
+            return 0;
+        }
+        else
+        {
+            for (ll i = 0; i < k - 1; i++)
+            {
+                odd += 2;
+            }
+            cout << odd << endl;
+            return 0;
+        }
+    }
+}
