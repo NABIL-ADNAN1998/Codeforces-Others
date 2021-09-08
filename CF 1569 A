@@ -1,0 +1,37 @@
+#include <bits/stdc++.h>
+using ll = long long int;
+using namespace std;
+
+int main()
+{
+    ll t;
+    cin >> t;
+    while (t--)
+    {
+        ll n, count = 0;
+        cin >> n;
+        string s;
+        cin >> s;
+        for (ll i = 0; i < n - 1; i++)
+        {
+            if (s[i] != s[i + 1])
+            {
+                count++;
+                cout << i + 1 << " " << i + 2 << endl;
+                break;
+            }
+        }
+
+        if (count == 0)
+        {
+
+            cout << "-1"
+                 << " "
+                 << "-1" << endl;
+        }
+        else
+        {
+            continue;
+        }
+    }
+}
