@@ -1,0 +1,45 @@
+#include <bits/stdc++.h>
+using ll = long long int;
+using namespace std;
+
+int main()
+{
+    ll n, count = 0;
+    cin >> n;
+    string s[n], temp;
+    vector<pair<int, string>> p;
+
+    for (ll i = 0; i < n; i++)
+    {
+        cin >> s[i];
+    }
+
+    for (ll i = 0; i < n; i++)
+    {
+        if (s[i] != "0")
+        {
+            temp = s[i];
+            for (ll j = i + 1; j < n; j++)
+            {
+                if (s[j] == temp)
+                {
+                    count++;
+                    s[j] = "0";
+                }
+            }
+        }
+        else
+        {
+            continue;
+        }
+
+        p.push_back(make_pair(count + 1, s[i]));
+        s[i] = "0";
+        count = 0;
+    }
+
+    sort(p.begin(), p.end());
+    ll len = p.size();
+    cout << p[len - 1].second << endl;
+    return 0;
+}
