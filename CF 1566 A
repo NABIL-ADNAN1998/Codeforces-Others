@@ -1,0 +1,17 @@
+#include <bits/stdc++.h>
+using ll = long long int;
+#include <algorithm>
+using namespace std;
+
+int main()
+{
+    ll t;
+    cin >> t;
+    while (t--)
+    {
+        ll n, x;
+        cin >> n >> x;
+
+        cout << x / (n / 2 + 1) << endl;
+    }
+}
