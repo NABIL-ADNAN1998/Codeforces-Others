@@ -1,0 +1,36 @@
+#include <iostream>
+using ll = long long int;
+#include <iterator>
+#include <set>
+using namespace std;
+
+int main()
+{
+    ll t;
+    cin >> t;
+    while (t--)
+    {
+        ll n, j = 0;
+        cin >> n;
+        string s1 = "(";
+        string s2 = ")";
+        string s3 = "()";
+        for (ll i = n; i > 0; i--)
+        {
+            for (ll k = 0; k < i; k++)
+            {
+                cout << s1;
+            }
+            for (ll m = 0; m < i; m++)
+            {
+                cout << s2;
+            }
+            for (ll p = 0; p < j; p++)
+            {
+                cout << s3;
+            }
+            j++;
+            cout << endl;
+        }
+    }
+}
