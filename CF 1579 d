@@ -1,0 +1,56 @@
+#include <bits/stdc++.h>
+using namespace std;
+using ll = long long;
+int main()
+{
+    ll t;
+    cin >> t;
+    vector<int> v;
+    while (t--)
+    {
+        ll n, a, ans = 0;
+        cin >> n;
+        pair<int, int> v1;
+        pair<int, int> v2;
+        v.clear();
+        priority_queue<pair<int, int>> p;
+        for (ll i = 1; i <= n; i++)
+        {
+            cin >> a;
+            if (a != 0)
+            {
+                p.push(make_pair(a, i));
+            }
+        }
+
+        while (p.size() > 1)
+        {
+            v1 = p.top();
+            p.pop();
+            v2 = p.top();
+            p.pop();
+            ans++;
+            v.push_back(v1.second);
+            v.push_back(v2.second);
+            v1.first--;
+            v2.first--;
+            if (v1.first != 0)
+            {
+                p.push(v1);
+            }
+            if (v2.first != 0)
+            {
+                p.push(v2);
+            }
+        }
+
+        cout << ans << endl;
+        if (ans != 0)
+        {
+            for (ll i = 0; i <= v.size() - 2; i += 2)
+            {
+                cout << v[i] << " " << v[i + 1] << endl;
+            }
+        }
+    }
+}
