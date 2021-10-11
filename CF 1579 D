@@ -4,9 +4,9 @@ using ll = long long;
 int main()
 {
     ll t;
-    cin >> t;
+    cin >> T;
     vector<int> v;
-    while (t--)
+    while (T--)
     {
         ll n, a, ans = 0;
         cin >> n;
