@@ -1,0 +1,76 @@
+#include <bits/stdc++.h>
+using namespace std;
+using ll = long long;
+int main()
+{
+    ll t;
+    cin >> t;
+    while (t--)
+    {
+        ll a, b, c, big = -1, count = 0;
+        cin >> a >> b >> c;
+        big = max(a, max(b, c));
+        if (a == b && b == c)
+        {
+            cout << "1"
+                 << " "
+                 << "1"
+                 << " "
+                 << "1";
+        }
+        else
+        {
+            if (a == big)
+            {
+                count++;
+            }
+            if (b == big)
+            {
+                count++;
+            }
+            if (c == big)
+            {
+                count++;
+            }
+            if (count == 1)
+            {
+                if (a != big)
+                {
+                    cout << big - a + 1 << " ";
+                }
+                else
+                {
+                    cout << "0"
+                         << " ";
+                }
+
+                if (b != big)
+                {
+                    cout << big - b + 1 << " ";
+                }
+                else
+                {
+                    cout << "0"
+                         << " ";
+                }
+                if (c != big)
+                {
+                    cout << big - c + 1 << " ";
+                }
+                else
+                {
+                    cout << "0"
+                         << " ";
+                }
+            }
+            else
+            {
+                cout << big - a + 1 << " ";
+                cout << big - b + 1 << " ";
+                cout << big - c + 1 << " ";
+            }
+        }
+
+        cout << endl;
+    }
+}
