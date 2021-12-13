@@ -1,0 +1,38 @@
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include <iomanip>
+using namespace std;
+using ll = long long int;
+int main()
+{
+   ll j, k, px, py, steps = 0;
+   cin >> j >> k;
+   cin >> px >> py;
+   ll test;
+   cin >> test;
+   while (test--)
+   {
+      ll a, b, flag = 0;
+      cin >> a >> b;
+      ll l = 0, r = max(j, k);
+      while (l <= r)
+      {
+         ll mid = (l + r) / 2;
+         if (j >= px + (mid * a) && px + (mid * a) > 0 && k >= py + (mid * b) && py + (mid * b) > 0)
+         {
+            flag = mid;
+            l = mid + 1;
+         }
+         else
+         {
+            r = mid - 1;
+         }
+      }
+      px += (flag * a);
+      py += (flag * b);
+      steps += flag;
+   }
+   cout << steps << endl;
+   return 0;
+}
