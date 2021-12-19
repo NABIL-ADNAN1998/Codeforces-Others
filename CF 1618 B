@@ -1,0 +1,44 @@
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include <iomanip>
+#include <string>
+using namespace std;
+using ll = long long int;
+int main()
+{
+   ll test;
+   cin >> test;
+   while (test--)
+   {
+      ll n, flag = 0;
+      cin >> n;
+      string s;
+      cin.ignore();
+      getline(cin, s);
+      s.erase(remove(s.begin(), s.end(), ' '), s.end());
+      
+      string ans;
+      ans = ans + s[0];
+      for (ll i = 1; i < s.size() - 1; i += 2)
+      {
+         if (s[i] == s[i + 1])
+         {
+            ans = ans + s[i];
+         }
+         else
+         {
+            ans = ans + s[i];
+            ans = ans + s[i + 1];
+            flag++;
+         }
+      }
+      ans = ans + s[s.size() - 1];
+      if (flag == 0)
+      {
+         ans += s[s.size() - 1];
+      }
+
+      cout << ans << endl;
+   }
+}
