@@ -1,0 +1,40 @@
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include <iomanip>
+using namespace std;
+using ll = long long int;
+int main()
+{
+   int test;
+   cin >> test;
+   while (test--)
+   {
+      string s;
+      bool ans = true;
+      cin >> s;
+      if (s.size() % 2 != 0)
+      {
+         cout << "NO" << endl;
+      }
+      else
+      {
+         for (ll i = 0; i <= (s.size() / 2) - 1; i++)
+         {
+            if (s[i] != s[s.size() / 2 + i])
+            {
+               ans = false;
+               break;
+            }
+         }
+         if (ans == true)
+         {
+            cout << "YES" << endl;
+         }
+         else
+         {
+            cout << "NO" << endl;
+         }
+      }
+   }
+}
