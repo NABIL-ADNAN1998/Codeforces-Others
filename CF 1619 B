@@ -1,0 +1,28 @@
+#include <bits/stdc++.h>
+#include <vector>
+#include <algorithm>
+#include <iomanip>
+#include <math.h>
+using namespace std;
+using ll = long long int;
+int main()
+{
+   ll test;
+   cin >> test;
+   while (test--)
+   {
+      ll n;
+      cin >> n;
+      set<ll> v;
+      for (ll i = 1; i <= sqrt(n); i++)
+      {
+         v.insert(i * i);
+      }
+      for (ll i = 2; i * i * i <= n; i++)
+      {
+         v.insert(i * i * i);
+      }
+
+      cout << v.size() << endl;
+   }
+}
