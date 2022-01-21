@@ -1,0 +1,71 @@
+#include <bits/stdc++.h>
+#include <vector>
+#include <algorithm>
+#include <iomanip>
+#include <math.h>
+using namespace std;
+using ll = long long int;
+int main()
+{
+   ll test;
+   cin >> test;
+   for (ll q = 1; q <= test; q++)
+   {
+      ll num, sr, load, angle, row = 0, column = 0;
+      cin >> num;
+      sr = ceil(sqrt(num));
+      load = sr * sr;
+      angle = load - (sr - 1);
+      if (load % 2 == 0)
+      {
+         if (num == angle)
+         {
+            row = sr;
+            column = sr;
+         }
+         else
+         {
+            // even
+            if (num > angle)
+            {
+               // greater than angle
+               row = load - num + 1;
+
+               column = sr;
+            }
+            else
+            {
+               // less than angle
+               row = load - angle + 1;
+               column = sr - (angle - num);
+            }
+         }
+      }
+      else
+      {
+         if (num == angle)
+         {
+            row = sr;
+            column = sr;
+         }
+         else
+         {
+            // odd
+            if (num > angle)
+            {
+               // greater than angle
+               column = load - num + 1;
+               row = sr;
+            }
+            else
+            {
+               // less than angle
+               column = load - angle + 1;
+               row = sr - (angle - num);
+            }
+         }
+      }
+
+      cout << "case " << q << ": " << column << " " << row << endl;
+   }
+}
