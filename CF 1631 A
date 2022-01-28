@@ -1,0 +1,48 @@
+#include <bits/stdc++.h>
+#include <vector>
+#include <algorithm>
+#include <iomanip>
+#include <math.h>
+using namespace std;
+using ll = long long int;
+int main()
+{
+    ll test;
+    cin >> test;
+    while (test--)
+    {
+        ll n, a = 0, b = 0;
+        cin >> n;
+        ll big[n], small[n];
+        for (ll i = 0; i < n; i++)
+        {
+            cin >> big[i];
+        }
+        for (ll i = 0; i < n; i++)
+        {
+            cin >> small[i];
+        }
+        for (ll i = 0; i < n; i++)
+        {
+            if (big[i] < small[i])
+            {
+                ll temp;
+                temp = small[i];
+                small[i] = big[i];
+                big[i] = temp;
+            }
+        }
+
+        for (ll i = 0; i < n; i++)
+        {
+            a = max(a, big[i]);
+        }
+        for (ll i = 0; i < n; i++)
+        {
+            b = max(b, small[i]);
+        }
+        // cout << a << "  " << b << endl;
+
+        cout << a * b << endl;
+    }
+}
