@@ -1,0 +1,53 @@
+#include <bits/stdc++.h>
+#include <vector>
+#include <algorithm>
+#include <iomanip>
+#include <math.h>
+using namespace std;
+using ll = long long int;
+int main()
+{
+    ll test;
+    cin >> test;
+    while (test--)
+    {
+        ll n, m, row, col, x1, y1, x2, y2;
+        cin >> n >> m >> row >> col;
+        if (row == 1)
+        {
+            cout << n << " "
+                 << "1 " << n << " " << m << endl;
+            goto kajshesh;
+        }
+        if (row == n)
+        {
+            cout << "1"
+                 << " "
+                 << "1 "
+                 << "1"
+                 << " " << m << endl;
+            goto kajshesh;
+        }
+        if (col == 1)
+        {
+            cout << "1"
+                 << " "
+                 << m << " " << n << " " << m << endl;
+            goto kajshesh;
+        }
+        if (col == m)
+        {
+            cout << "1"
+                 << " "
+                 << "1 " << n << " "
+                 << "1" << endl;
+            goto kajshesh;
+        }
+
+        cout << "1 "
+             << "1 " << n << " " << m << endl;
+    kajshesh:
+    {
+    }
+    }
+}
