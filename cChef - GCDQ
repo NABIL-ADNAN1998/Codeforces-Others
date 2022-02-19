@@ -1,0 +1,47 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+using ll = long long int;
+
+void solve()
+{
+    ll n, q;
+    cin >> n >> q;
+    ll a[n + 1];
+    ll f[n + 1], b[n + 1];
+    for (ll i = 1; i <= n; i++)
+    {
+        cin >> a[i];
+    }
+    f[0] = b[n + 1] = 0;
+    for (ll i = 1; i <= n; i++)
+    {
+        f[i] = __gcd(f[i - 1], a[i]);
+    }
+
+    for (ll i = n; i >= 1; --i)
+    {
+        b[i] = __gcd(b[i + 1], a[i]);
+    }
+
+    while (q--)
+    {
+        ll l, r;
+        cin >> l >> r;
+
+        cout << __gcd(f[l - 1], b[r + 1]) << endl;
+    }
+}
+
+int main()
+{
+    ll test;
+    cin >> test;
+
+    while (test--)
+    {
+        solve();
+    }
+
+    // solve();
+}
