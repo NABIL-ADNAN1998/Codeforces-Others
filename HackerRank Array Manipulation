@@ -1,0 +1,45 @@
+#include <bits/stdc++.h>
+using namespace std;
+using ll = long long int;
+
+const int d = 1e7 + 10;
+ll ar[d];
+
+void solve()
+{
+    ll n, m, big = 0;
+    cin >> n >> m;
+
+    while (m--)
+    {
+        ll a, b, k;
+        cin >> a >> b >> k;
+        ar[a] += k;
+        ar[b + 1] -= k;
+    }
+
+    for (ll i = 1; i <= n; i++)
+    {
+        ar[i] += ar[i - 1];
+    }
+
+    for (ll i = 1; i <= n; i++)
+    {
+        big = max(big, ar[i]);
+    }
+
+    cout << big << endl;
+}
+
+int main()
+{
+    /*ll test;
+    cin >> test;
+
+    while (test--)
+    {
+        solve();
+    }*/
+
+    solve();
+}
