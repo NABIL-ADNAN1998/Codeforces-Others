@@ -1,0 +1,45 @@
+#include <bits/stdc++.h>
+using namespace std;
+using ll = long long int;
+
+void solve()
+{
+    ll n;
+    cin >> n;
+    ll hash[1001];
+    hash[0] = 0;
+    hash[1] = 1;
+    for (ll i = 2; i <= 16; i++)
+    {
+        hash[i] = hash[i - 1] + hash[i - 2];
+    }
+
+    ll k = 2;
+
+    for (ll i = 1; i <= n; i++)
+    {
+        if (i == hash[k])
+        {
+            cout << "O";
+            k++;
+        }
+        else
+        {
+            cout << "o";
+        }
+    }
+}
+
+int main()
+{
+    /* ll test;
+     cin >> test;
+
+     while (test--)
+     {
+         solve();
+     }
+     */
+
+    solve();
+}
