@@ -1,0 +1,39 @@
+#include <bits/stdc++.h>
+using namespace std;
+using ll = long long int;
+
+void solve()
+{
+    ll n, a = 0;
+    cin >> n;
+    while (n > 0)
+    {
+        ll temp = n % 10;
+        n /= 10;
+        if (temp == 7 || temp == 4)
+        {
+            a++;
+        }
+    }
+    if (a == 7 || a == 4)
+    {
+        cout << "YES";
+    }
+    else
+    {
+        cout << "NO";
+    }
+}
+
+int main()
+{
+    /*ll test;
+    cin >> test;
+
+    while (test--)
+    {
+        solve();
+    }*/
+
+    solve();
+}
