@@ -1,0 +1,31 @@
+#include <bits/stdc++.h>
+using namespace std;
+using ll = long long int;
+
+void solve()
+{
+    ll w, h;
+    cin >> w >> h;
+    ll count = (w - 1) + (w * (h - 1));
+    if (count % 2 == 0)
+    {
+        cout << "Hussain" << endl;
+    }
+    else
+    {
+        cout << "Hasan" << endl;
+    }
+}
+
+int main()
+{
+    ll test;
+    cin >> test;
+
+    while (test--)
+    {
+        solve();
+    }
+
+    // solve();
+}
