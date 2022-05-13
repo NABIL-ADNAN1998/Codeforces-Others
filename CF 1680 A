@@ -1,0 +1,38 @@
+#include <bits/stdc++.h>
+using namespace std;
+using ll = long long int;
+
+void solve()
+{
+    ll a, b, x, y;
+    cin >> a >> b >> x >> y;
+    if (a == b && b == x && x == y)
+    {
+        cout << a << endl;
+    }
+    else
+    {
+        ll temp = max(a, x);
+        if (temp <= b && temp <= y)
+        {
+            cout << temp << endl;
+        }
+        else
+        {
+            cout << a + x << endl;
+        }
+    }
+}
+
+int main()
+{
+    ll test;
+    cin >> test;
+
+    while (test--)
+    {
+        solve();
+    }
+
+    // solve();
+}
