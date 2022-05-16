@@ -1,0 +1,68 @@
+#include <bits/stdc++.h>
+using namespace std;
+using ll = long long int;
+
+void solve()
+{
+    ll n, m;
+    cin >> n >> m;
+    char a[n][m];
+    ll a1, b1, a2, b2;
+    for (ll i = 0; i < n; i++)
+    {
+        for (ll j = 0; j < m; j++)
+        {
+            cin >> a[i][j];
+        }
+    }
+    for (ll i = 0; i < n; i++)
+    {
+        for (ll j = 0; j < m; j++)
+        {
+            if (a[i][j] == 'R')
+            {
+                a1 = i;
+                b1 = j;
+                goto part2;
+            }
+        }
+    }
+
+part2:
+    for (ll j = 0; j < m; j++)
+    {
+        for (ll i = 0; i < n; i++)
+        {
+            if (a[i][j] == 'R')
+            {
+                a2 = i;
+                b2 = j;
+                goto part3;
+            }
+        }
+    }
+
+part3:
+    if (a1 == a2 && b1 == b2)
+    {
+        cout << "YES" << endl;
+    }
+    else
+    {
+        cout << "NO" << endl;
+    }
+   
+}
+
+int main()
+{
+    ll test;
+    cin >> test;
+
+    while (test--)
+    {
+        solve();
+    }
+
+    // solve();
+}
