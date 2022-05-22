@@ -1,0 +1,38 @@
+// 1679 A
+
+#include <bits/stdc++.h>
+using namespace std;
+using ll = long long int;
+void solve()
+{
+    ll a, b, c, d, k;
+    cin >> a >> b >> c >> d >> k;
+    ll dif = 0;
+    dif += abs(a - c);
+    dif += abs(b - d);
+    if (dif % 2 == 0 && k % 2 == 0 && dif <= k)
+    {
+        cout << "YES" << endl;
+    }
+    else
+    {
+        if (dif % 2 != 0 && k % 2 != 0 && dif <= k)
+        {
+            cout << "YES" << endl;
+        }
+        else
+        {
+            cout << "NO" << endl;
+        }
+    }
+}
+
+int main()
+{
+    ll test;
+    cin >> test;
+    while (test--)
+    {
+        solve();
+    }
+}
