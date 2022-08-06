@@ -1,0 +1,26 @@
+
+from posixpath import split
+from re import I
+
+
+t = int(input())
+
+for i in range(t):
+    input()
+    lowest = {}
+    highest = {}
+    n, k = map(int, input().split(" "))
+    station = input().split()
+
+    for i, j in enumerate(station):
+        if j not in lowest:
+            lowest[j] = i
+        highest[j] = i
+
+    for i in range(k):
+        x, y = input().split()
+
+        if (x in lowest) and (y in highest) and (lowest[x] < highest[y]):
+            print("YES")
+        else:
+            print("NO")
