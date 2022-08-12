@@ -1,0 +1,34 @@
+
+Test_case = int(input())
+for t in range(Test_case):
+    n = int(input())
+    number = list(map(int, input().split()))
+    max = 0
+    max_index = -1
+    for i, j in enumerate(number):
+        if(number[i] >= max):
+            max = j
+            max_index = i
+    result = True
+    # suffix elements
+    d = max
+    for i in range(max_index+1, n):
+        if(number[i] > d):
+            result = False
+            break
+        else:
+            d = number[i]
+
+    # prefix elements
+    d = number[0]
+    if(result == True):
+        for i in range(1,max_index):
+            if((number[i] < d) or (number[i] > max)):
+                result = False
+            else:
+                d = number[i]
+
+    if(result == False):
+        print("NO")
+    else:
+        print("YES")
