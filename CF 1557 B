@@ -1,0 +1,24 @@
+
+T = int(input())
+for t in range(T):
+    n, k = map(int, input().split())
+    number = list(map(int, input().split()))
+    indexlist = {}
+
+    for i in range(n):
+        indexlist[number[i]] = i
+
+    number.sort()
+
+    count = 1
+    ind = indexlist[number[0]]
+    for i in range(1, n):
+        z = indexlist[number[i]]
+        if(int(z) != ind + 1):
+            count += 1
+        ind = int(z)
+
+    if(count <= k):
+        print("YES")
+    else:
+        print("NO")
