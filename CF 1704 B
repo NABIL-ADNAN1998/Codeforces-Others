@@ -1,0 +1,19 @@
+
+T = int(input())
+for t in range(T):
+    n, k = map(int, input().split())
+    number = list(map(int, input().split()))
+
+    mn, mx = number[0], number[0]
+
+    change = 0
+    for i in range(1, n):
+        x = abs(number[i]-mn)
+        y = abs(number[i]-mx)
+        if(y > (2*k) or x > (2*k)):
+            change += 1
+            mn=number[i]
+            mx=number[i]
+        mn=min(number[i], mn)
+        mx=max(number[i], mx)
+    print(change)
