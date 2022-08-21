@@ -1,0 +1,22 @@
+import math
+T = int(input())
+for t in range(T):
+    n, k = map(int, input().split())
+    time = 0
+    installed = 1
+
+    while(installed < k):
+        time += 1
+        installed *= 2
+
+    rem = n - installed
+    # print(rem)
+
+    if(installed >= n):
+        print(time)
+    else:
+        if(rem % k == 0):
+            time += (rem//k)
+        else:
+            time += (rem//k)+1
+        print(int(time))
