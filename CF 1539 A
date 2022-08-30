@@ -1,0 +1,19 @@
+
+
+test = int(input())
+for i in range(test):
+    n, x, t = map(int, input().split())
+    ans = 0
+    if(x > t):
+        ans = 0
+    elif(x == t):
+        ans = n-1
+    else:
+        a = t//x
+        if(a < n):
+            ans += ((n-a)*a)
+            ans += ((a*(a-1))//2)
+        elif(a >= n):
+            ans = (n*(n-1))//2
+
+    print(int(ans))
