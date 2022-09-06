@@ -1,0 +1,20 @@
+
+
+t = int(input())
+for i in range(t):
+    ans = 0
+    row, column, srow, scolumn, d = map(int, input().split())
+
+    if(srow+d < row and scolumn-d > 1):
+
+        ans = (row-1)+(column-1)
+
+    elif(srow-d > 1 and scolumn+d < column):
+
+        ans = (row-1)+(column-1)
+
+    else:
+
+        ans = -1
+
+    print(ans)
