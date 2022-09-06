@@ -1,0 +1,31 @@
+
+t = int(input())
+
+for i in range(t):
+
+    maxt, maxn, sumn = map(int, input().split())
+
+    result = 0
+    r = 0
+    jhamela = False
+
+    for i in range(maxt):
+
+        r += maxn
+
+        if(r == sumn):
+            result += (maxn**2)
+            break
+
+        elif(r > sumn):
+            jhamela = True
+            break
+
+        else:
+            result += (maxn**2)
+
+    if(jhamela == True):
+
+        result += ((sumn-(r-maxn))**2)
+
+    print(result)
