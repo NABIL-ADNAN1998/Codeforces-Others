@@ -1,0 +1,14 @@
+
+t = int(input())
+
+for test in range(t):
+
+    n = int(input())
+
+    final_result = 0
+
+    for i in range(n):
+
+        final_result ^= int(input(), 2)
+
+    print(bin(final_result).count("1"))
