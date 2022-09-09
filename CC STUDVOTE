@@ -1,0 +1,27 @@
+
+from collections import *
+
+t = int(input())
+
+for test in range(t):
+
+    n, k = map(int, input().split())
+    number = list(map(int, input().split()))
+
+    vote = []
+    vote = Counter(number)
+    # print(vote)
+    l = []
+    ans = 0
+
+    for i in vote:
+        if(vote[i] >= k):
+            l.append(i)
+            ans += 1
+
+    for j in range(len(l)):
+
+        if(number[l[j]-1] == l[j]):
+            ans -= 1
+
+    print(ans)
