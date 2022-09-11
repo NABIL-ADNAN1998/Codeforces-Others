@@ -1,0 +1,23 @@
+
+from collections import *
+
+t = int(input())
+
+for test in range(t):
+
+    n, k, v = map(int, input().split())
+    number = list(map(int, input().split()))
+
+    total_number = (n+k)*v
+
+    containing_number = 0
+    for i in range(n):
+        containing_number += number[i]
+
+    remaining_number = total_number - containing_number
+    
+
+    if(remaining_number % k == 0 and remaining_number > 0):
+        print(remaining_number // k)
+    else:
+        print(-1)
