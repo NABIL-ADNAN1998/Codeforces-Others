@@ -1,0 +1,17 @@
+
+from collections import *
+import math
+
+
+for test in range(int(input())):
+
+    n, m = map(int, input().split())
+
+    lob = (n//2)*(m//2+m % 2)+(n//2+n % 2)*(m//2)
+    if (lob == 0):
+        print("0/1")
+        continue
+
+    g = math.gcd(n*m, lob)
+
+    print(str(lob//g)+"/"+str((n*m)//g))
