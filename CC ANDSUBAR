@@ -1,0 +1,24 @@
+
+from collections import *
+import math
+
+
+for test in range(int(input())):
+
+    n = int(input())
+
+    if(n == 1):
+        print(1)
+        continue
+
+    temp = 1
+    while(temp*2 <= n):
+        temp *= 2
+
+    s = n-temp+1
+    if(n == temp):
+        print(temp//2)
+        continue
+
+    final = max(s, (temp//2))
+    print(final)
