@@ -1,0 +1,23 @@
+
+from collections import *
+import math
+
+
+for test in range(int(input())):
+
+    h, s = map(float, input().split(' '))
+
+    d = (h**4)-(16*(s**2))
+
+    if (h*h < 4*s) or (h == 0):
+        print(-1)
+        continue
+    else:
+        x = ((h*h+((h*h*h*h-16*s*s)**(0.5)))/2.0)**(0.5)
+
+        y = 2.0*s/x
+
+        if (y > x):
+            print("%.6f %.6f %.6f" % (x, y, h))
+        else:
+            print("%.6f %.6f %.6f" % (y, x, h))
