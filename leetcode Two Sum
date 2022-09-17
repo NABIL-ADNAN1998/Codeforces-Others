@@ -10,4 +10,4 @@ class Solution:
                 b = nums.index(y)
                 break
 
-        print(f"[{a},{b}]")
+        return [a,b]
