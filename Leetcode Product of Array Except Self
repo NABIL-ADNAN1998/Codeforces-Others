@@ -1,0 +1,30 @@
+class Solution:
+    def productExceptSelf(self, nums: List[int]) -> List[int]:
+        final_list = []
+        product = 1
+        if (nums.count(0) >= 2):
+            for j in range(len(nums)):
+                final_list.append(0)
+            return final_list
+
+        if (nums.count(0) == 1):
+            for j in range(len(nums)):
+                if (j == nums.index(0)):
+                    final_list.append(-5)
+                else:
+                    final_list.append(0)
+            for j in range(len(nums)):
+                if (nums[j] == 0):
+                    continue
+                else:
+                    product *= nums[j]
+
+            x = final_list.index(-5)
+            final_list[x] = product
+            return final_list
+
+        for j in range(len(nums)):
+            product *= nums[j]
+        for j in range(len(nums)):
+            final_list.append(product//nums[j])
+        return final_list
