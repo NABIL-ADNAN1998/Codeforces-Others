@@ -1,0 +1,25 @@
+
+t = int(input())
+
+while t:
+    n = int(input())
+    s = ''
+    x = 'BAN'
+    for i in range(n):
+        s += x
+
+    ans = []
+    i = 1
+    j = len(s)-1
+
+    while j > i:
+        ans.append((i+1, j+1))
+        i += 3
+        j -= 3
+
+    print(len(ans))
+
+    for i in ans:
+        print(str(i[0]) + ' ' + str(i[1]))
+
+    t -= 1
