@@ -68,25 +68,25 @@ void calculate_phi()
 
 int main()
 {
-    phi[0] = 0;
-    phi[1] = 0;
     calculate_phi();
-    // phisum[1] = 0;
+   
 
-    for (ll i = 2; i <= M + 2; i++)
+    for (ll i = 2; i <= M; i++)
     {
-      
-        phi[i] = (phi[i] * phi[i]) + phi[i - 1];
+        
+        unsigned long long temp = phi[i] * phi[i];
+        unsigned long long prev = phi[i - 1];
+        phi[i] = temp + prev;
     }
 
     ll test;
     cin >> test;
     for (ll t = 1; t <= test; t++)
     {
-        ll a, b;
+        unsigned long long a, b;
         cin >> a >> b;
-        ll ans = phi[b] - phi[a - 1];
-        cout << "Case " << t << " : " << ans << endl;
+        unsigned long long ans = phi[b] - phi[a - 1];
+        cout << "Case " << t << ": " << ans << endl;
     }
 }
 
