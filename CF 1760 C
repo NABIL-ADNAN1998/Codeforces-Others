@@ -1,0 +1,27 @@
+
+test = int(input())
+
+while (test > 0):
+    n = int(input())
+    power = []
+    high = 0
+    a = 0
+    power = list(map(int, input().split()))
+    num = []
+    for i in range(n):
+        num.append(power[i])
+
+    num.sort()
+    high = num[len(num)-1]
+    a = num[len(num)-2]
+    
+    for i in range(n):
+        x = power[i]
+        if (x < high):
+            power[i] = x-high
+        else:
+            power[i] -= a
+
+    print(*power, sep=' ')
+
+    test -= 1
