@@ -1,0 +1,61 @@
+You are given a string S of small letters, now sort the string on the basis of their count in descending order , It is 
+guaranteed that all the characters count are distinct.
+Sample Input 1: Sample Output 1:
+bbbbaccddd bbbbdddcca
+Sample Input 2: Sample Output 2:
+aabccc cccaab
+
+// solution C++
+
+#include <bits/stdc++.h>
+using namespace std;
+#define ll long long
+#define M 5000000
+
+bool modify(pair<int, int> a, pair<int, int> b)
+{
+    if (a.first == b.first)
+        return a.second < b.second;
+    return a.first > b.first;
+}
+
+int main()
+{
+    string s;
+    cin >> s;
+    string ans = "";
+    int a[26] = {0};
+    ll count = 0;
+    for (ll i = 0; i < s.size(); i++)
+    {
+        a[s[i] - 'a']++;
+        // cout<<a[i]<<endl;
+    }
+
+    
+    vector<pair<int, int>> pa;
+    for (ll i = 0; i < 26; i++)
+    {
+        pa.push_back({a[i], i});
+    }
+
+    sort(pa.begin(), pa.end(), modify);
+
+    /*for (ll i = 0; i < 26; i++)
+    {
+        cout << pa[i].first << " " << pa[i].second << endl;
+    }*/
+
+    for (ll i = 0; i < 26; i++)
+    {
+        if (pa[i].first > 0)
+        {
+            count = pa[i].first;
+            for (ll j = 0; j < count; j++)
+            {
+                ans += (pa[i].second + 'a');
+            }
+        }
+    }
+    cout << ans << endl;
+}
