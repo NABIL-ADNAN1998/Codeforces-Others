@@ -1,0 +1,54 @@
+#include <bits/stdc++.h>
+using namespace std;
+#define ll long long
+#define ull unsigned long long
+
+int main()
+{
+    int t;
+    cin >> t;
+    while (t--)
+    {
+        ll ma = -1, mi = 1000000;
+        ll ma_count = 0, mi_count = 0;
+        ll n;
+        ll ans;
+        cin >> n;
+        ll num[n];
+        for (ll i = 0; i < n; i++)
+        {
+            cin >> num[i];
+            if (num[i] > ma)
+            {
+                ma = num[i];
+            }
+            if (num[i] < mi)
+            {
+                mi = num[i];
+            }
+        }
+        for (ll i = 0; i < n; i++)
+        {
+            if (num[i] == ma)
+            {
+                ma_count++;
+            }
+            if (num[i] == mi)
+            {
+                mi_count++;
+            }
+        }
+        // cout << "mi_count = " << mi_count;
+
+        if (mi == ma)
+        {
+            ans = ma_count * ((ma_count - 1));
+        }
+        else
+        {
+            ans = mi_count * (ma_count * 2);
+        }
+
+        cout << ans << endl;
+    }
+}
