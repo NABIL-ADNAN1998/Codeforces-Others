@@ -1,0 +1,50 @@
+#include <bits/stdc++.h>
+using namespace std;
+#define ll long long
+#define ull unsigned long long
+
+int solve()
+{
+    int k, n;
+    cin >> k >> n;
+    vector<int> visited(n + 5, 0);
+    set<int> s;
+    int i = 1, sum = 1;
+    while (s.size() < k && sum <= n)
+    {
+        s.insert(sum);
+        visited[sum] = 1;
+        sum += i;
+        i++;
+    }
+    sum = n;
+    while (s.size() < k)
+    {
+        if (visited[sum] == 0)
+        {
+            s.insert(sum);
+            visited[sum] = 1;
+            sum--;
+        }
+        else
+        {
+            sum--;
+        }
+    }
+
+    for (auto it : s)
+    {
+        cout << it << " ";
+    }
+    cout << endl;
+}
+
+int main()
+{
+    int t;
+    cin >> t;
+    while (t--)
+    {
+        solve();
+    }
+}
