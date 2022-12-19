@@ -1,0 +1,23 @@
+#include <bits/stdc++.h>
+using namespace std;
+#define ll long long
+#define ull unsigned long long
+ 
+int solve()
+{
+    char s[3];
+    cin >> s;
+ 
+    int res = s[0] - '0' + s[2] - '0';
+    cout << res << endl;
+}
+ 
+int main()
+{
+    int t;
+    cin >> t;
+    while (t--)
+    {
+        solve();
+    }
+}
