@@ -1,0 +1,116 @@
+#include <bits/stdc++.h>
+using namespace std;
+#define ll long long
+#define mx 105
+
+ll primes[101];
+vector<ll> pn;
+vector<vector<pair<ll, ll>>> p_facto(mx);
+vector<vector<pair<ll, ll>>> ans(mx);
+
+void siev()
+{
+
+    for (ll i = 0; i <= 100; i++)
+    {
+        primes[i] = i;
+    }
+
+    for (ll i = 2; i <= sqrt(100); i++)
+    {
+        if (primes[i] == i)
+        {
+            for (ll j = (i * i); j < 101; j += i)
+            {
+                primes[j] = -1;
+            }
+        }
+    }
+    for (ll i = 0; i <= 100; i++)
+    {
+        if (primes[i] != -1 && primes[i] != 0 && primes[i] != 1)
+        {
+            pn.push_back(primes[i]);
+        }
+    }
+}
+
+int main()
+{
+    siev();
+
+    ll count[mx] = {0};
+
+    for (ll i = 2; i <= 100; i++)
+    {
+        ll n = i;
+        for (auto j : pn)
+        {
+            if (j * j > n)
+            {
+                break;
+            }
+            if (n % j != 0)
+            {
+                continue;
+            }
+            ll a = 0;
+            while (n % j == 0)
+            {
+                n = n / j;
+                a++;
+            }
+            p_facto[i].push_back({j, a});
+        }
+
+        if (n > 1)
+        {
+            p_facto[i].push_back({n, 1});
+        }
+    }
+
+    for (ll i = 2; i < p_facto.size(); i++)
+    {
+        vector<pair<ll, ll>> v;
+
+        for (ll j = 0; j < p_facto[i].size(); j++)
+        {
+            v.push_back({p_facto[i][j].first, p_facto[i][j].second}); // storing i's prime factors in v
+        }
+
+        for (ll j = 0; j < v.size(); j++)
+        {
+            count[v[j].first] += v[j].second;
+        }
+
+        for (ll j = 2; j < mx; j++)
+        {
+            if (count[j] != 0)
+            {
+                ans[i].push_back({j, count[j]});
+            }
+        }
+    }
+
+    
+
+    ll t, f = 1;
+    cin >> t;
+
+    while (t--)
+    {
+        ll n;
+        cin >> n;
+        cout << "Case " << f << ": " << n << " = ";
+        f++;
+        for (ll i = 0; i < ans[n].size(); i++)
+        {
+            cout << ans[n][i].first << " (" << ans[n][i].second << ") ";
+            if (i != ans[n].size() - 1)
+            {
+                cout << "* ";
+            }
+        }
+        cout << endl;
+    }
+}
