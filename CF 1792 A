@@ -1,0 +1,35 @@
+#include <bits/stdc++.h>
+using namespace std;
+typedef long long ll;
+#define mx 100000
+
+int main()
+{
+    ll test;
+    cin >> test;
+    for (ll t = 1; t <= test; t++)
+    {
+        ll n, count = 0, ans = 0;
+        cin >> n;
+        ll a[n];
+        for (ll i = 0; i < n; i++)
+        {
+            cin >> a[i];
+            if (a[i] == 1)
+            {
+                count++;
+            }
+        }
+        if (count % 2 == 0)
+        {
+            ans += (count / 2);
+        }
+        else
+        {
+            ans += ((count / 2) + 1);
+        }
+        ans += (n - count);
+
+        cout << ans << endl;
+    }
+}
