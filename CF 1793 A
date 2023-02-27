@@ -1,0 +1,42 @@
+#include <bits/stdc++.h>
+using namespace std;
+typedef long long ll;
+
+ll fun1(ll a, ll b, ll n, ll m)
+{
+    ll buy = 0, cost = 0;
+
+    buy = (n / (m + 1)) * (m + 1);
+    cost = (n / (m + 1)) * m * a;
+    if (buy < n)
+    {
+        if (a < b)
+        {
+            cost += ((n - buy) * a);
+        }
+        else
+        {
+            cost += ((n - buy) * b);
+        }
+    }
+
+    return cost;
+}
+
+int main()
+{
+    ll t;
+    cin >> t;
+    while (t--)
+    {
+        ll a, b, n, m;
+        cin >> a >> b >> n >> m;
+        ll c1, c2 = LLONG_MAX;
+        c1 = fun1(a, b, n, m);
+        if (b < a)
+        {
+            c2 = n * b;
+        }
+        cout << min(c1, c2) << endl;
+    }
+}
