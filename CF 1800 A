@@ -1,0 +1,86 @@
+#include <bits/stdc++.h>
+using namespace std;
+typedef long long ll;
+ 
+int main()
+{
+#ifndef ONLINE_JUDGE
+    freopen("testCase.txt", "r", stdin);
+    freopen("out.txt", "w", stdout);
+#endif
+ 
+    ll t;
+    cin >> t;
+    while (t--)
+    {
+        ll n, k;
+        cin >> n >> k;
+        string s;
+        cin >> s;
+        ll number[125] = {0};
+        for (ll i = 0; i < s.size(); i++)
+        {
+            ll x = int(s[i]);
+            number[x]++;
+        }
+ 
+        // for (ll i = 65; i < 125; i++)
+        // {
+        //     cout << number[i] << "  ";
+        // }
+        ll cost = 0;
+ 
+        for (ll i = 65; i < 91; i++)
+        {
+            if (number[i] > number[i + 32] && number[i + 32] != 0)
+            {
+                cost += number[i + 32];
+                number[i] -= number[i + 32];
+                number[i + 32] = 0;
+            }
+            else
+            {
+                if (number[i] < number[i + 32] && number[i] != 0)
+                {
+                    cost += number[i];
+                    number[i + 32] -= number[i];
+                    number[i] = 0;
+                }
+                else
+                {
+                    if (number[i] == number[i + 32] && number[i] != 0 && number[i + 32] != 0)
+                    {
+                        cost += number[i];
+                        number[i] = 0;
+                        number[i + 32] = 0;
+                    }
+                }
+            }
+        }
+ 
+        // cout << "cost = " << cost << endl;
+ 
+        for (ll i = 0; i < 125; i++)
+        {
+ 
+            if (k > 0)
+            {
+                if (number[i] != 0)
+                {
+                    while (k > 0 && number[i] >= 2)
+                    {
+                        cost += 1;
+                        number[i] -= 2;
+                        k--;
+                    }
+                }
+            }
+            else
+            {
+                break;
+            }
+        }
+ 
+        cout << cost << endl;
+    }
+}
