@@ -1,0 +1,59 @@
+#include <bits/stdc++.h>
+using namespace std;
+typedef long long ll;
+
+ll gcdcount(ll n, ll m)
+{
+    if (n == 0)
+    {
+        return m;
+    }
+    return gcdcount(m % n, n);
+}
+
+int main()
+{
+#ifndef ONLINE_JUDGE
+    freopen("testCase.txt", "r", stdin);
+    freopen("out.txt", "w", stdout);
+#endif
+
+    ll t;
+    cin >> t;
+
+    while (t--)
+    {
+        ll n;
+        cin >> n;
+        vector<string> s;
+        for (ll i = 0; i < ((2 * n) - 2); i++)
+        {
+            string d;
+            cin >> d;
+            if (d.length() == n - 1)
+            {
+                s.push_back(d);
+            }
+        }
+
+        // for (ll i = 0; i < s.size(); i++)
+        // {
+        //     cout << s[i] << endl;
+        // }
+
+        // cout << s[0][1] << endl;
+        string s1 = s[0], s2 = s[1];
+
+        reverse(s2.begin(), s2.end());
+        // cout << s2 << endl;
+
+        if (s1 == s2)
+        {
+            cout << "yes" << endl;
+        }
+        else
+        {
+            cout << "no" << endl;
+        }
+    }
+}
