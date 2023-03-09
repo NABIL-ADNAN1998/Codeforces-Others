@@ -1,0 +1,57 @@
+#include <bits/stdc++.h>
+using namespace std;
+#define ll long long
+#define ull unsigned long long
+
+ll solve()
+{
+
+    ll n, ans = 0;
+    cin >> n;
+    string s;
+    cin >> s;
+    vector<ll> prefix(n, 0), suffix(n, 0);
+    set<char> count;
+    for (ll i = 0; i < n; i++)
+    {
+        count.insert(s[i]);
+        prefix[i] = count.size();
+    }
+    // for (ll i = 0; i < n; i++)
+    // {
+    //     cout << prefix[i] << "  ";
+    // }
+    // cout << endl;
+    count.clear();
+
+    for (ll i = n - 1; i >= 0; i--)
+    {
+        count.insert(s[i]);
+        suffix[i] = count.size();
+    }
+    //  for (ll i = 0; i < n; i++)
+    // {
+    //     cout << suffix[i] << "  ";
+    // }
+    // cout << endl;
+    for (ll i = 0; i < n-1; i++)
+    {
+        ans = max(ans, prefix[i] + suffix[i + 1]);
+    }
+
+    cout << ans << endl;
+}
+
+int main()
+{
+#ifndef ONLINE_JUDGE
+    freopen("testCase.txt", "r", stdin);
+    freopen("out.txt", "w", stdout);
+#endif
+    int t;
+    cin >> t;
+    while (t--)
+    {
+        solve();
+    }
+}
