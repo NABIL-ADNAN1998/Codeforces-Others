@@ -1,0 +1,38 @@
+#include <bits/stdc++.h>
+using namespace std;
+#define ll long long
+#define ull unsigned long long
+
+int main()
+{
+
+#ifndef ONLINE_JUDGE
+    freopen("testCase.txt", "r", stdin);
+    freopen("out.txt", "w", stdout);
+#endif
+
+    int t;
+    cin >> t;
+    while (t--)
+    {
+
+        string p = "3141592653589793238462643383279502884197";
+        string a;
+        cin >> a;
+        int s = a.size();
+        int count = 0;
+        for (int i = 0; i < s; i++)
+        {
+            if (a[i] == p[i])
+            {
+                count++;
+            }
+            else
+            {
+                break;
+            }
+        }
+
+        cout << count << endl;
+    }
+}
