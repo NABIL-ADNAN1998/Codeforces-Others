@@ -1,0 +1,55 @@
+#include <bits/stdc++.h>
+using namespace std;
+#define ll long long
+#define ull unsigned long long
+
+int main()
+{
+
+#ifndef ONLINE_JUDGE
+    freopen("testCase.txt", "r", stdin);
+    freopen("out.txt", "w", stdout);
+#endif
+    string s = "";
+
+    for (ll i = 1; i <= 50; i++)
+    {
+        if (i % 3 == 0)
+        {
+            s += 'F';
+        }
+        if (i % 5 == 0)
+        {
+            s += 'B';
+        }
+    }
+    // cout << s << endl;
+    int t;
+    cin >> t;
+    while (t--)
+    {
+        ll n;
+        cin >> n;
+        string a;
+        cin >> a;
+        bool flag = false;
+        for (ll i = 0; i < 8; i++)
+        {
+            // cout << temp << endl;
+            if (s.substr(i, n) == a)
+            {
+                flag = true;
+                break;
+            }
+        }
+
+        if (flag == true)
+        {
+            cout << "yes" << endl;
+        }
+        else
+        {
+            cout << "no" << endl;
+        }
+    }
+}
