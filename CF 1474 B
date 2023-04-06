@@ -1,0 +1,81 @@
+#include <bits/stdc++.h>
+using namespace std;
+#define ll long long
+#define big 100000
+
+bool check[1000000 + 3];
+vector<int> prime;
+
+void siev()
+{
+    check[0] = 1;
+    check[1] = 1;
+    int i, j;
+    prime.push_back(2);
+    check[2] = 0;
+    for (int i = 4; i <= 1000000; i += 2)
+    {
+        check[i] = 1;
+    }
+    for (i = 3; i * i <= 1000000; i += 2)
+    {
+        if (check[i] == 0)
+        {
+            prime.push_back(i);
+            // cout << i << " ";
+            for (int j = i * i; j <= 1000000; j += (2 * i))
+            {
+                check[j] = 1;
+            }
+        }
+    }
+
+    for (; i <= 1000000; i++)
+    {
+        if (check[i] == 0)
+        {
+            prime.push_back(i);
+        }
+    }
+}
+
+int main()
+{
+    // ios_base::sync_with_stdio(false);
+    // cin.tie(NULL);
+#ifndef ONLINE_JUDGE
+    freopen("testCase.txt", "r", stdin);
+    freopen("out.txt", "w", stdout);
+#endif
+
+    siev();
+    int t;
+    cin >> t;
+    while (t--)
+    {
+
+        int b, c, d;
+        cin >> d;
+        // cout << "flag " << endl;
+        for (int i = d + 1; i <= 1000000; i++)
+        {
+            if (check[i] == 0)
+            {
+                b = i;
+                // cout << b << "  ";
+                break;
+            }
+        }
+        for (int i = b + d; i <= 1000000; i++)
+        {
+            if (check[i] == 0)
+            {
+                c = i;
+                // cout << c << "  ";
+                break;
+            }
+        }
+
+        cout << b * c << endl;
+    }
+}
