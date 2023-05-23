@@ -1,0 +1,46 @@
+#include <bits/stdc++.h>
+#define ll long long int
+using namespace std;
+
+int main()
+{
+    ll n;
+    cin >> n;
+    ll a[n + 1] = {0};
+    ll nsum[n + 1] = {0};
+    ll ssum[n + 1] = {0};
+
+    for (ll i = 1; i <= n; i++)
+    {
+        cin >> a[i];
+        nsum[i] = nsum[i - 1] + a[i];
+    }
+
+    sort(a, a + n + 1);
+
+    for (ll i = 1; i <= n; i++)
+    {
+        ssum[i] = ssum[i - 1] + a[i];
+    }
+
+    ll m;
+    cin >> m;
+
+    while (m--)
+    {
+        ll x, y, z;
+
+        cin >> x >> y >> z;
+
+        if (x == 1)
+        {
+            cout<< nsum[z] - nsum[y - 1] << endl;
+        }
+        else
+        {
+            cout<< ssum[z] - ssum[y - 1] << endl;
+        }
+    }
+
+    return 0;
+}
