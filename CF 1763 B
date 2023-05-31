@@ -1,0 +1,66 @@
+#include <bits/stdc++.h>
+#define ll long long int
+#define pii pair<ll, ll>
+using namespace std;
+
+int main()
+{
+    ll t;
+    cin >> t;
+    while (t--)
+    {
+        ll n, k;
+        cin >> n >> k;
+        ll h[n + 1], p[n + 1];
+        for (ll i = 1; i <= n; i++)
+        {
+            cin >> h[i];
+        }
+
+        for (ll i = 1; i <= n; i++)
+        {
+            cin >> p[i];
+        }
+
+        priority_queue<pii, vector<pii>, greater<pii>> volt;
+
+        for (ll i = 1; i <= n; i++)
+        {
+            volt.push({p[i], h[i]});
+        }
+
+        // for (ll i = 1; i <= n; i++)
+        // {
+        //     pii x;
+        //     x = volt.top();
+        //     volt.pop();
+        //     cout << x.first << "  " << x.second << endl;
+        // }
+
+        ll tk = k;
+
+        while (k > 0 && (!volt.empty()))
+        {
+            pii x = volt.top();
+            if(x.second <= tk)
+            {
+                volt.pop();
+            }else
+            {
+                k -= x.first;
+                tk += k;
+            }
+        }
+
+        if (k <= 0)
+        {
+            cout << "NO" << endl;
+        }
+        else
+        {
+            cout << "YES" << endl;
+        }
+    }
+
+    return 0;
+}
